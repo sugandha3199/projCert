@@ -55,6 +55,6 @@
   handlers:
     - name: Restart Docker service
       systemd:
-        name: docker
-        state: restarted
+         name: docker
+         state: restarted
 
