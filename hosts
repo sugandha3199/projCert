@@ -1,2 +1,2 @@
 [webserver]
-webserver1 ansible_hosts=10.182.0.3
+slavenode ansible_hosts=10.182.0.3
