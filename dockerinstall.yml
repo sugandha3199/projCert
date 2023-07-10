@@ -1,6 +1,6 @@
 ---
 - name: Install Docker
-  hosts: all
+  hosts: webserver
   become: yes
   tasks:
     - name: Install Docker dependencies
