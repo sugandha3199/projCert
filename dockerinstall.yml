@@ -25,11 +25,7 @@
         state: present
       when: ansible_os_family == 'Debian'
 
-    - name: Add Docker repository (for Debian/Ubuntu)
-      apt_repository:
-        repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
-        state: present
-      when: ansible_os_family == 'Debian'
+   
 
     - name: Install Docker Engine (for Debian/Ubuntu)
       apt:
@@ -37,24 +33,7 @@
         state: present
       when: ansible_os_family == 'Debian'
 
-    - name: Install required packages (for CentOS/RHEL)
-      yum:
-        name:
-          - yum-utils
-          - device-mapper-persistent-data
-          - lvm2
-        state: present
-      when: ansible_os_family == 'RedHat'
-
-    - name: Add Docker repository (for CentOS/RHEL)
-      command: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-      when: ansible_os_family == 'RedHat'
-
-    - name: Install Docker Engine (for CentOS/RHEL)
-      yum:
-        name: docker-ce
-        state: present
-      when: ansible_os_family == 'RedHat'
+ 
 
     - name: Start and enable Docker service
       service:
