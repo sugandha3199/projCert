@@ -37,7 +37,7 @@
         name: docker-ce
         state: present
       when: ansible_os_family == 'Debian'
-'
+
 
     - name: Start and enable Docker service
       service:
@@ -55,6 +55,7 @@
   handlers:
     - name: Restart Docker service
       systemd:
-         name: docker
-         state: restarted
+        name: docker
+        state: restarted
+
 
